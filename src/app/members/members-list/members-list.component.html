@@ -1,0 +1,11 @@
+<button routerLink="/member-add">Add member</button>
+<ul *ngIf= "members">
+  <li *ngFor="let member of members"> 
+    <a routerLink="/members/{{member.id}}">{{member.firstName}}</a>
+    <button routerLink="/member-update/{{member.id}}">Update</button>
+<button (click)="delete(member.id)">Delete</button>
+</li>
+</ul>
+<h4 *ngIf="!members">loading...</h4>
+
+
